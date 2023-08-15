@@ -4,24 +4,11 @@ import { useLiveQuery } from "dexie-react-hooks";
 
 function DashboardCards() {
     const [htsList, setHtsList] = useState([]);
-    const [txCurList, setTxCurList] = useState([]);
-    const [viralloadList, setViralloadList] = useState([]);
-    const [retentionList, setRetentionList] = useState([]);
-    const [pbsList, setPbsList] = useState([]);
-
-
-
     return (
         <div>
-            {/* <nav aria-label="breadcrumb">
-                <ol className="breadcrumb">
-                    <li className="breadcrumb-item"><a href="#">OpenMRS</a></li>
-                    <li className="breadcrumb-item"><a href="#">Home</a></li>
-                    <li className="breadcrumb-item text-info active" aria-current="page">Dashboard</li>
-                    <li style={{ marginLeft: 'auto' }}><a href="#" className='text-danger'>Reload</a></li>
-                </ol>
-            </nav> */}
+         
             <div className="row">
+                
                 <div className="col-xl col-sm-6 grid-margin stretch-card">
                     <div className="card">
                         <div className="card-body">
@@ -45,6 +32,7 @@ function DashboardCards() {
                         </div>
                     </div>
                 </div>
+
                 <div className="col-xl col-sm-6 grid-margin stretch-card">
                     <div className="card">
                         <div className="card-body">
@@ -74,7 +62,7 @@ function DashboardCards() {
                             <div className="row">
                                 <div className="col-9">
                                     <div className="d-flex align-items-center align-self-start">
-                                        <h5 className="mb-0">{viralloadList.length}</h5>
+                                        <h5 className="mb-0"></h5>
                                     </div>
                                 </div>
                                 <div className="col-3">

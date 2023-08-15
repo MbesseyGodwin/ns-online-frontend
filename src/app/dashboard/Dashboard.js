@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DashboardSlides from "./DashboardSlides";
 import DashboardCards from "./DashboardCards";
+import FuturisticDashboard from "./FuturisticDashboard";
 
 
 export class Dashboarding extends Component {
@@ -12,9 +13,11 @@ export class Dashboarding extends Component {
   render() {
     return (
       <div>
-        <DashboardCards />
+
+<FuturisticDashboard />
+        {/* <DashboardCards /> */}
         <div className="row">
-          <DashboardSlides />
+          {/* <DashboardSlides /> */}
         </div>
       </div>
     );

@@ -47,7 +47,7 @@ const App = ({ location, i18n }) => {
       <div className="container-fluid page-body-wrapper">
         {navbarComponent}
         <div className="main-panel">
-          <div className="content-wrapper bg-light">
+          <div className="content-wrapper bg-secondary">
             <AppRoutes />
           </div>
           <div className="fixed-bottom">{footerComponent}</div>
