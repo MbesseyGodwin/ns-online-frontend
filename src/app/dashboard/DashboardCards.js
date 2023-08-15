@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import db from "../shared/indexedDB/DB";
 import { useLiveQuery } from "dexie-react-hooks";
 
 
@@ -9,29 +8,6 @@ function DashboardCards() {
     const [viralloadList, setViralloadList] = useState([]);
     const [retentionList, setRetentionList] = useState([]);
     const [pbsList, setPbsList] = useState([]);
-
-
-    // hts data
-    const htsData = useLiveQuery(() => {
-        return db.htslist.get(1);
-    }, []);
-
-    useEffect(() => {
-        if (htsData !== undefined) {
-            setHtsList(htsData);
-        }
-    }, [htsData]);
-
-    // viral load data
-    const viralloadData = useLiveQuery(() => {
-        return db.viralloadlist.get(1);
-    }, []);
-
-    useEffect(() => {
-        if (viralloadData !== undefined) {
-            setViralloadList(viralloadData);
-        }
-    }, [viralloadData]);
 
 
 

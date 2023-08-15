@@ -85,7 +85,7 @@ const radarChartData = {
 
 export default function DashboardSlides() {
     return (
-        <Carousel className="col-md-7 grid-margin stretch-card">
+        <Carousel className="col-6 grid-margin stretch-card">
          
 
             {/* Additional Line Chart */}

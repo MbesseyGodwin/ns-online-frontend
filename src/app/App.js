@@ -7,7 +7,7 @@ import Navbar from "./shared/Navbar";
 import Sidebar from "./shared/Sidebar";
 import Footer from "./shared/Footer";
 import { withTranslation } from "react-i18next";
-import DexieInsert from "./shared/indexedDB/DexieInsert";
+// import DexieInsert from "./shared/indexedDB/DexieInsert";
 
 const App = ({ location, i18n }) => {
   const [isFullPageLayout, setIsFullPageLayout] = useState(false);
@@ -48,10 +48,9 @@ const App = ({ location, i18n }) => {
         {navbarComponent}
         <div className="main-panel">
           <div className="content-wrapper bg-light">
-            <DexieInsert />
             <AppRoutes />
           </div>
-          <div className="bg-light py-3 fixed-bottom">{footerComponent}</div>
+          <div className="fixed-bottom">{footerComponent}</div>
         </div>
       </div>
     </div>

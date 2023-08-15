@@ -6,7 +6,8 @@ import Spinner from '../app/shared/Spinner';
 const Dashboard = lazy(() => import('./dashboard/Dashboard'));
 const Reports = lazy(() => import('./reports/Reports'));
 const FacilityPage = lazy(() => import('./reports/FacilityPage'));
-const Landing = lazy(() => import('./landing-page/Landing'))
+const Landing = lazy(() => import('./landing_page/Landing'));
+const uploadtracker = lazy(() => import('./upload_tracker/UploadTracker'));
 
 class AppRoutes extends Component {
   render() {
@@ -17,6 +18,7 @@ class AppRoutes extends Component {
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/reports" component={Reports} />
           <Route path="/facility/:datimCode" component={FacilityPage} />
+          <Route path="/uploadtracker" component={uploadtracker} />
           <Redirect to="/landing" />
         </Switch>
       </Suspense>

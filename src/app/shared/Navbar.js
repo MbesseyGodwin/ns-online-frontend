@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import BackToTop from './BackToTop';
-import PushData from './PushData';
 
 const Navbar = () => {
 
@@ -49,7 +48,6 @@ const Navbar = () => {
         </button>
 
         <div className="container justify-content-end">
-          <PushData />
           <BackToTop />
         </div>
       </div>

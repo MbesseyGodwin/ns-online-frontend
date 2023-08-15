@@ -57,6 +57,14 @@ class Sidebar extends Component {
             </Link>
           </li>
 
+          {/* uploadtracker */}
+          <li className={this.isPathActive('/uploadtracker') ? 'nav-item menu-items my-1 active' : 'nav-item menu-items my-1'}>
+            <Link className="nav-link" to="/uploadtracker">
+              <span className="bg-secondary px-2 rounded mr-2"><i class="text-dark fa-solid fa-eye"></i></span>
+              <span className="menu-title text-light"><Trans>upload tracker</Trans></span>
+            </Link>
+          </li>
+
         </ul>
       </nav>
     );
