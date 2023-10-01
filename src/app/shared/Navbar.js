@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar p-0 fixed-top d-flex flex-row">
+    <nav className="navbar p-0 fixed-top d-flex flex-row bg-secondary">
       <div className="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
         <h1 className="sidebar-brand brand-logo-mini h1 text-light">
           N<span className="text-danger">S</span>
@@ -26,7 +26,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
         <button
-          className="navbar-toggler align-self-center"
+          className="navbar-toggler align-self-center text-dark"
           type="button"
           onClick={() => document.body.classList.toggle('sidebar-icon-only')}
         >

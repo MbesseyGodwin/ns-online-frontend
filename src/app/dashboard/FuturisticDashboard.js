@@ -61,11 +61,11 @@ const cardData = [
 const FuturisticDashboard = () => {
   return (
     <div className="container-fluid p-0 mb-3">
-      <div className="slider">
+      <div className="slider rounded ">
         <div className="slide-track">
           {cardData.map((card, index) => (
             <div className="slide" key={index}>
-              <Card className="bg-light text-dark mx-2">
+              <Card className="bg-light text-dark rounded-0 border-end border-right">
                 <Card.Body>
                   <Card.Title className="text-danger">{card.title}</Card.Title>
                   <Card.Text>{card.content}</Card.Text>

@@ -36,9 +36,9 @@ class Sidebar extends Component {
   render() {
     return (
       <nav className="sidebar sidebar-offcanvas" id="sidebar">
-        <div className="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <h1 className="sidebar-brand brand-logo display-1 h1 text-light">NMRS <span className='text-danger'>SUPPORT</span></h1>
-          <h1 className="sidebar-brand brand-logo-mini h1 text-light">N<span className='text-danger'>S</span></h1>
+        <div className="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top bg-secondary border-right">
+          <h1 className="sidebar-brand brand-logo display-1 h1 text-success">NMRS <span className='text-danger'>SUPPORT</span></h1>
+          <h1 className="sidebar-brand brand-logo-mini h1 text-success">N<span className='text-danger'>S</span></h1>
         </div>
         <ul className="nav fixed">
           {/* dashboard */}

@@ -87,7 +87,7 @@ function UploadTracker() {
           onChange={(e) => setGlobalFilter(e.target.value)}
         />
       </div>
-      <table className="table table-bordered" {...getTableProps()}>
+      <table className="table table-auto table-bordered" {...getTableProps()}>
         <thead className="thead-dark">
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
@@ -104,7 +104,8 @@ function UploadTracker() {
               <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => {
                   return (
-                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                    // implement and set data is loading message while waiting for the data to be pulled from the api
+                    isLoading === false ? <td {...cell.getCellProps()}>{cell.render("Cell")}</td> : <td> loading</td>
                   );
                 })}
               </tr>

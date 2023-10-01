@@ -1,0 +1,75 @@
+/* Variables */
+:root {
+  --brand-success: rgba(237, 12, 34);
+  --loader-size: 10em;
+  --check-height: calc(var(--loader-size) / 2);
+  --check-width: calc(var(--check-height) / 2);
+  --check-thickness: 3px;
+  --check-color: var(--brand-success);
+}
+
+/* Styles */
+.circle-loader {
+  border: 1px solid rgba(79, 226, 0);
+  /* border-left-color: var(--check-color); */
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 50%;
+  width: var(--loader-size);
+  height: var(--loader-size);
+  content: none;
+}
+
+.circle-loader2 {
+  border: 1px solid rgba(79, 226, 0, 0.999);
+  border-left-color: var(--check-color);
+  /* position: relative; */
+  /* display: inline-block; */
+  /* vertical-align: top; */
+  border-radius: 50%;
+  width: 7em;
+  height: 7em;
+  /* content: none; */
+}
+
+.circle-loader > .center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: none;
+}
+
+/* Apply animation only to circle-loader */
+.circle-loader {
+  animation: none; /* Remove the animation */
+}
+
+/* Additional styles for load-complete */
+.load-complete {
+  animation: none;
+  border-color: var(--check-color);
+  transition: border 500ms ease-out;
+}
+
+.checkmark {
+  display: none;
+}
+
+.checkmark.draw:after {
+  animation: checkmark 800ms ease forwards;
+  transform: scaleX(-1) rotate(135deg);
+}
+
+@keyframes checkmark {
+  0%, 20% {
+    height: 0;
+    width: 0;
+  }
+
+  40%, 100% {
+    height: var(--check-height);
+    width: var(--check-width);
+  }
+}

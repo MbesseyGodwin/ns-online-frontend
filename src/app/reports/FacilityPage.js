@@ -36,14 +36,14 @@ function FacilityPage() {
     <div className="container-fluid">
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb shadow border border-light">
-          <li className="breadcrumb-item text-dark">
+          <li className="breadcrumb-item text-light">
             {selectedLGA?.label}
           </li>
-          <li className="breadcrumb-item text-dark">
+          <li className="breadcrumb-item text-text-light">
             {selectedFacility?.label}
           </li>
-          <li className="breadcrumb-item text-dark">{selectedFacility.datimCode}</li>
-          <li style={{ marginLeft: 'auto' }} className="text-dark">
+          <li className="breadcrumb-item text-text-light">{selectedFacility.datimCode}</li>
+          <li style={{ marginLeft: 'auto' }} className="text-text-light">
             <Link to="../reports" className='font-weight-bold'><span className="mdi mdi mdi-arrow-left"></span>Back</Link>
           </li>
         </ol>

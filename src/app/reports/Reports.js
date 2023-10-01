@@ -73,7 +73,7 @@ function Reports() {
             {states.map((state) => (
               <li key={state.value}>
                 <a href="#" onClick={() => toggleState(state.value)}>
-                  <span className={'text-dark'}>{state.label}</span>
+                  <span className={'text-light'}>{state.label}</span>
                 </a>
                 <ul className={isStateExpanded(state.value) ? 'hidden' : ''}>
                   {lga
@@ -81,7 +81,7 @@ function Reports() {
                     .map((lgaItem) => (
                       <li key={lgaItem.value}>
                         <a href="#" onClick={() => toggleLGA(lgaItem.value)}>
-                          <span className={selectedLGA === lgaItem.value ? 'text-primary' : 'text-dark'}>
+                          <span className={selectedLGA === lgaItem.value ? 'text-primary' : 'text-light'}>
                             {lgaItem.label}
                           </span>
                         </a>
