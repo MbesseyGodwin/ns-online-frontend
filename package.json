@@ -3,7 +3,9 @@
     "private": true,
     "dependencies": {
         "@amcharts/amcharts4": "^4.10.37",
+        "@heroicons/react": "^2.0.18",
         "@lourenci/react-kanban": "^0.13.0",
+        "@material-tailwind/react": "^2.1.2",
         "@mdi/font": "^4.2.95",
         "@tinymce/tinymce-react": "^3.3.2",
         "amcharts3": "^3.21.15",

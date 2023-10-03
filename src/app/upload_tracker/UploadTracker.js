@@ -4,6 +4,10 @@ import { useTable, useGlobalFilter, useFilters } from "react-table";
 
 const columns = [
   {
+    Header: "S.No",
+    accessor: (row, index) => index + 1,
+  },
+  {
     Header: "Facility Name",
     accessor: "name",
   },
@@ -34,15 +38,13 @@ const columns = [
 ];
 
 function UploadTracker() {
-  const defaultColumn = useMemo(() => ({ Filter: null }), []);
   const apiURL = process.env.REACT_APP_API_URL;
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [uploadList, setUploadList] = useState([]);
 
   useEffect(() => {
     const fetchUploadList = async () => {
-      setIsLoading(true);
       try {
         const response = await axios.get(`${apiURL}names`);
         setUploadList(response.data);
@@ -55,6 +57,7 @@ function UploadTracker() {
     fetchUploadList();
   }, [apiURL]);
 
+  const defaultColumn = useMemo(() => ({ Filter: null }), []);
   const {
     getTableProps,
     getTableBodyProps,
@@ -77,7 +80,7 @@ function UploadTracker() {
 
   return (
     <div className="">
-      <h2 className="mb-4 text-dark">Facility Upload Records</h2>
+      <h1 className="h2">Facility Upload Tracker</h1>
       <div className="mb-3">
         <input
           type="search"
@@ -86,6 +89,7 @@ function UploadTracker() {
           value={globalFilter || ""}
           onChange={(e) => setGlobalFilter(e.target.value)}
         />
+
       </div>
       <table className="table table-auto table-bordered" {...getTableProps()}>
         <thead className="thead-dark">
@@ -98,19 +102,24 @@ function UploadTracker() {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {rows.map((row) => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => {
-                  return (
-                    // implement and set data is loading message while waiting for the data to be pulled from the api
-                    isLoading === false ? <td {...cell.getCellProps()}>{cell.render("Cell")}</td> : <td> loading</td>
-                  );
-                })}
-              </tr>
-            );
-          })}
+          {isLoading ? (
+            <tr>
+              <td className="text-center text-white h1 text-uppercase" colSpan={columns.length}>
+                loading list, please wait... <i className="fa-solid fa-arrows-spin fa-spin"></i>
+              </td>
+            </tr>
+          ) : (
+            rows.map((row) => {
+              prepareRow(row);
+              return (
+                <tr {...row.getRowProps()}>
+                  {row.cells.map((cell) => (
+                    <td className="text-white" {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                  ))}
+                </tr>
+              );
+            })
+          )}
         </tbody>
       </table>
     </div>
