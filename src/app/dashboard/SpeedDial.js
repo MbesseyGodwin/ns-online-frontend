@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPrint, faCamera, faShare } from '@fortawesome/free-solid-svg-icons';
 import html2canvas from 'html2canvas';
 
+// Define actions for the SpeedDial
 const actions = [
   { label: 'Print', icon: faPrint, action: () => window.print() },
   { label: 'Capture', icon: faCamera, action: captureScreenshot },
@@ -10,6 +11,7 @@ const actions = [
   // Add more actions as needed
 ];
 
+// Function to capture a screenshot of the page
 function captureScreenshot() {
   html2canvas(document.body).then(canvas => {
     const screenshotDataUrl = canvas.toDataURL('image/png');
@@ -20,9 +22,11 @@ function captureScreenshot() {
   });
 }
 
+// Function to share the current page using the Web Share API
 function sharePage() {
   const alertTimeout = 3000;
 
+  // Function to close the alert
   function closeAlert() {
     const alertElement = document.querySelector('.alert');
     if (alertElement) {
@@ -30,6 +34,7 @@ function sharePage() {
     }
   }
 
+  // Check if the Web Share API is supported
   if (navigator.share) {
     navigator.share({
       title: document.title,
@@ -47,15 +52,18 @@ function sharePage() {
   }
 }
 
+// SpeedDial component
 function SpeedDial() {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Toggle the SpeedDial open/closed state
   const toggleSpeedDial = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <div className={`container py-3 px-1 d-inline speed-dial ${isOpen ? 'open' : ''} ${isOpen ? 'bg-secondary' : ''}`}>
+    <div className={`container d-inline speed-dial ${isOpen ? 'open' : ''} ${isOpen ? 'bg-default' : ''}`}>
+      {/* Render buttons for each action in the SpeedDial */}
       {isOpen &&
         actions.map((action, index) => (
           <button key={index} className="btn btn-primary mx-2 speed-dial-button" onClick={action.action}>
@@ -66,9 +74,10 @@ function SpeedDial() {
           </button>
         ))}
 
-      <button className={`${isOpen ? ' btn bg-danger' : 'bg-primary p-3 rounded'}`} onClick={toggleSpeedDial}>
-        <i className={`fas toggle-icon ${isOpen ? 'fa-times' : 'fa-plus fa-2xl'}`} />
-        {isOpen ? ' Close' : ''}
+      {/* Toggle button for opening/closing the SpeedDial */}
+      <button className={`${isOpen ? ' btn bg-danger' : 'bg-primary p-1 rounded'}`} onClick={toggleSpeedDial}>
+        <i className={`fas toggle-icon ${isOpen ? 'fa-times' : 'fa-plus'}`} />
+        {isOpen ? ' Close' : ' Shortcuts'}
       </button>
     </div>
   );

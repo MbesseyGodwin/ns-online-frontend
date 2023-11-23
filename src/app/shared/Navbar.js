@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import BackToTop from './BackToTop';
+import SpeedDial from '../dashboard/SpeedDial';
+import LiveDate from '../dashboard/livedate/LiveDate';
 
 const Navbar = () => {
 
@@ -49,7 +51,10 @@ const Navbar = () => {
 
         <div className="container justify-content-end">
           <BackToTop />
+          <SpeedDial />
         </div>
+
+        <LiveDate />
       </div>
     </nav>
   );

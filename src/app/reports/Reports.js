@@ -47,7 +47,7 @@ function Reports() {
   return (
     <div className="container-fluid">
       <div className="form-group">
-        <label htmlFor="facilitySelect" className='text-dark'>Select a Facility:</label>
+        <h1 htmlFor="facilitySelect" className='h3'>Select a Facility:</h1>
         <select
           className="custom-select shadow"
           name="facility"
@@ -55,7 +55,7 @@ function Reports() {
           onChange={handleFacilityChange}
           value={selectedFacility}
         >
-          <option value="">Select a facility</option>
+          <option value="">Click here to select a facility</option>
           {facilities
             .slice() // Create a copy of the array before sorting
             .sort((a, b) => a.label.localeCompare(b.label)) // Sort facilities alphabetically by label

@@ -30,7 +30,7 @@ const Footer = () => {
           <thead>
             <tr className="text-dark">
               <th>
-                partner: <span className="text-green-500">Caitas</span>{" "}
+                partner: <span className="text-green-500">Caritas</span>{" "}
               </th>
               <th>
                 State: <span className="text-green-500">Abia</span>

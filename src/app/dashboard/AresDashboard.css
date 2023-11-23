@@ -1,7 +1,7 @@
 /* Variables */
 :root {
   --brand-success: rgba(237, 12, 34);
-  --loader-size: 10em;
+  --loader-size: 9em;
   --check-height: calc(var(--loader-size) / 2);
   --check-width: calc(var(--check-height) / 2);
   --check-thickness: 3px;
@@ -60,6 +60,10 @@
 .checkmark.draw:after {
   animation: checkmark 800ms ease forwards;
   transform: scaleX(-1) rotate(135deg);
+}
+
+table tbody tr td {
+  font-size: 44px;
 }
 
 @keyframes checkmark {
